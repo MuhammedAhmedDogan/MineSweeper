@@ -4,10 +4,10 @@ import java.util.Scanner;
 
 public class MineSweeper { // Değerlendirme formu 5
     // Değişkenler. MineSweeper sınıfının nitelikleri
-    int row, col, size, mines, winCount; // Oyun tahtasının boyutları, mayın sayısı ve kazanma durumunu hesaplamak bir sayaç tanımlandı.
+    int row, col, size, mines, winCount;   // Oyun tahtasının boyutları, mayın sayısı ve kazanma durumunu hesaplamak bir sayaç tanımlandı.
     boolean isWin = false, isLose = false; // Oyunun kazanıldığını ya da kaybedildiğini belirleyen boolean değişkenler.
-    String[][] board, map; // Kullanıcıya gösterilen oyun tahtası ve oyun boyunca hesaplamalar için kullanılan, oyun sonunda gösterilen mayın konumları.
-    Random random = new Random(); // Mayın konumlarını rastgele belirlemek için Random sınıfından bir random nesnesi oluşturuldu.
+    String[][] board, map;                 // Kullanıcıya gösterilen oyun tahtası ve hesaplamalar için kullanılıp oyun sonunda gösterilen mayın konumları.
+    Random random = new Random();          // Mayın konumlarını rastgele belirlemek için Random sınıfından bir random nesnesi oluşturuldu.
     Scanner scan = new Scanner(System.in); // Kullanıcıdan veri almak için Scanner sınıfından scan nesnesi oluşturuldu.
 
     // MineSweeper sınıfının constructor metodu. Kullanıcıdan alınan satır ve sütun değerleri ile oyun tahtasının niteliklerini oluşturur.
