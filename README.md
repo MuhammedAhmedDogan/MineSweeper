@@ -28,7 +28,5 @@ Sütun Giriniz : 0
 - 2 - 
 - - - 
 0 - - 
-Satır Giriniz : 0
-Sütun Giriniz : 2
 
 Proje Java version 21.0.2 kullanılarak hazırlanmıştır
