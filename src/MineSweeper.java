@@ -22,11 +22,24 @@ public class MineSweeper {
 
     public void run() {
         this.boardCreator(this.board);
-        this.map = this.board;
+        this.boardCreator(this.map);
         this.mineCreator();
-        this.print(this.board);
-        this.print(this.map);
-        this.select();
+
+        while (!isWin && !isLose) {
+            this.print(this.board);
+            this.print(this.map);
+            this.select();
+        }
+
+        if (isWin){
+            this.print(map);
+            System.out.println("Tebrikler oyunu kazandınız.");
+        }
+
+        if (isLose){
+            this.print(map);
+            System.out.println("Oyun bitti. Mayına bastınız !");
+        }
     }
 
     public void boardCreator(String[][] arr) {
@@ -82,11 +95,18 @@ public class MineSweeper {
     public void countMines(int row, int col) {
         int count = 0;
         for (int i = row - 1; i <= row + 1; i++) {
+            i = Math.max(i, 0);
+            if (i == this.row)
+                break;
             for (int j = col - 1; j <= col + 1; j++) {
+                j = Math.max(j, 0);
+                if (j == this.col)
+                    break;
                 count = map[i][j].equals("*") ? count + 1 : count;
             }
         }
         this.board[row][col] = Integer.toString(count);
+        this.map[row][col] = Integer.toString(count);
     }
 
 

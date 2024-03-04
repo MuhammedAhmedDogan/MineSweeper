@@ -21,6 +21,5 @@ public class Main {
         MineSweeper mineSweeper = new MineSweeper(row, col);
         mineSweeper.run();
 
-
     }
 }
