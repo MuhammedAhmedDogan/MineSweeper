@@ -11,22 +11,24 @@ Mayınların Konumu
 * - - 
 - - * 
 - - - 
+===========================
 Mayın Tarlası Oyuna Hoşgeldiniz !
 - - - 
 - - - 
 - - - 
 Satır Giriniz : 0
 Sütun Giriniz : 1
+===========================
 - 2 - 
 - - - 
 - - - 
 Satır Giriniz : 2
 Sütun Giriniz : 0
+===========================
 - 2 - 
 - - - 
 0 - - 
 Satır Giriniz : 0
 Sütun Giriniz : 2
-
 
 Proje Java version 21.0.2 kullanılarak hazırlanmıştır
