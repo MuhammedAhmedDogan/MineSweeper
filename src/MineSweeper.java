@@ -4,10 +4,9 @@ import java.util.Scanner;
 
 public class MineSweeper {
     // Değişkenler
-    int row, col, size, mines;
+    int row, col, size, mines, winCount;
     boolean isWin = false, isLose = false;
     String[][] board, map;
-
     Random random = new Random();
     Scanner scan = new Scanner(System.in);
 
@@ -31,12 +30,12 @@ public class MineSweeper {
             this.select();
         }
 
-        if (isWin){
+        if (isWin) {
             this.print(map);
             System.out.println("Tebrikler oyunu kazandınız.");
         }
 
-        if (isLose){
+        if (isLose) {
             this.print(map);
             System.out.println("Oyun bitti. Mayına bastınız !");
         }
@@ -80,13 +79,15 @@ public class MineSweeper {
 
             if (selectedRow < 0 || selectedCol < 0 || selectedRow >= this.row || selectedCol >= this.col) {
                 System.out.println("Oyun tahtası dışında bir koordinat girdiniz ! Lütfen tekrar giriniz.");
-            } else if (map[selectedRow][selectedCol].equals("*")) {
+            } else if (this.map[selectedRow][selectedCol].equals("*")) {
                 this.isLose = true;
                 break;
-            } else if (!board[selectedRow][selectedCol].equals("-") && !map[selectedRow][selectedCol].equals("*")) {
+            } else if (!this.board[selectedRow][selectedCol].equals("-") && !this.map[selectedRow][selectedCol].equals("*")) {
                 System.out.println("Daha önce seçilmiş bir koordinat girdiniz ! Lütfen tekrar giriniz.");
             } else {
                 this.countMines(selectedRow, selectedCol);
+                if (++winCount == (this.size - this.mines))
+                    this.isWin = true;
                 break;
             }
         }
