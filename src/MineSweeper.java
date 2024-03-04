@@ -66,7 +66,6 @@ public class MineSweeper { // Değerlendirme formu 5
             }
             System.out.println();
         }
-        System.out.println();
     }
 
     // Kullanıcıdan işaretlemek istediği koordinatları alan ve uygunluğunu kontrol eden select metodu. ( Değerlendirme formu 9, 10 )
