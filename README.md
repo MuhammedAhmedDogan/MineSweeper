@@ -11,20 +11,17 @@ Mayınların Konumu
 * - - 
 - - * 
 - - - 
-===========================
 Mayın Tarlası Oyuna Hoşgeldiniz !
 - - - 
 - - - 
 - - - 
 Satır Giriniz : 0
 Sütun Giriniz : 1
-===========================
 - 2 - 
 - - - 
 - - - 
 Satır Giriniz : 2
 Sütun Giriniz : 0
-===========================
 - 2 - 
 - - - 
 0 - - 
