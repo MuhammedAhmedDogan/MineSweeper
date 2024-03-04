@@ -66,7 +66,7 @@ public class MineSweeper { // Değerlendirme formu 5
             }
             System.out.println();
         }
-        System.out.println("====================");
+        System.out.println();
     }
 
     // Kullanıcıdan işaretlemek istediği koordinatları alan ve uygunluğunu kontrol eden select metodu. ( Değerlendirme formu 9, 10 )
@@ -77,6 +77,7 @@ public class MineSweeper { // Değerlendirme formu 5
             int selectedRow = scan.nextInt();
             System.out.print("Sütun :");
             int selectedCol = scan.nextInt();
+            System.out.println("========================================");
 
             if (selectedRow < 0 || selectedCol < 0 || selectedRow >= this.row || selectedCol >= this.col) { // Değerlendirme formu 10
                 System.out.println("Oyun tahtası dışında bir koordinat girdiniz ! Lütfen tekrar giriniz.");

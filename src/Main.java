@@ -10,13 +10,13 @@ public class Main {
         System.out.println("Mayın Tarlası Oyununa Hoşgeldiniz.\nOyun Tahtanızın Boyutunu Ayarlayalım");
         do {
             if (row < 2 || col < 2) {
-                System.out.println("====================");
                 System.out.println("Satır veya sütün sayısı 2'den küçük olamaz! Lütfen tekrar giriniz :");
             }
             System.out.print("Satır sayısı : ");
             row = scan.nextInt();
             System.out.print("Sütun sayısı : ");
             col = scan.nextInt();
+            System.out.println("========================================");
         } while (row < 2 || col < 2);
 
         // MineSweeper sınıfından mineSweeper nesnesi üretilerek oyun başlatıldı.
