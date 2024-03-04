@@ -1,12 +1,15 @@
 import java.util.Arrays;
 import java.util.Random;
+import java.util.Scanner;
 
 public class MineSweeper {
     // Değişkenler
     int row, col, size, mines;
+    boolean isWin = false, isLose = false;
     String[][] board, map;
 
     Random random = new Random();
+    Scanner scan = new Scanner(System.in);
 
     MineSweeper(int row, int col) {
         this.row = row;
@@ -18,11 +21,12 @@ public class MineSweeper {
     }
 
     public void run() {
-        boardCreator(this.board);
+        this.boardCreator(this.board);
         this.map = this.board;
-        mineCreator();
-        print(this.board);
-        print(this.map);
+        this.mineCreator();
+        this.print(this.board);
+        this.print(this.map);
+        this.select();
     }
 
     public void boardCreator(String[][] arr) {
@@ -36,8 +40,8 @@ public class MineSweeper {
         while (count < this.mines) {
             randRow = random.nextInt(row);
             randCol = random.nextInt(col);
-            if (!map[randRow][randCol].equals("*")) {
-                map[randRow][randCol] = "*";
+            if (!this.map[randRow][randCol].equals("*")) {
+                this.map[randRow][randCol] = "*";
                 count++;
             }
         }
@@ -51,6 +55,38 @@ public class MineSweeper {
             System.out.println();
         }
         System.out.println("====================");
+    }
+
+    public void select() {
+        for (; ; ) {
+            System.out.println("Tahtada açmak istediğiniz koordinatları satır ve sütun olarak giriniz.");
+            System.out.print("Satır :");
+            int selectedRow = scan.nextInt();
+            System.out.print("Sütun :");
+            int selectedCol = scan.nextInt();
+
+            if (selectedRow < 0 || selectedCol < 0 || selectedRow >= this.row || selectedCol >= this.col) {
+                System.out.println("Oyun tahtası dışında bir koordinat girdiniz ! Lütfen tekrar giriniz.");
+            } else if (map[selectedRow][selectedCol].equals("*")) {
+                this.isLose = true;
+                break;
+            } else if (!board[selectedRow][selectedCol].equals("-") && !map[selectedRow][selectedCol].equals("*")) {
+                System.out.println("Daha önce seçilmiş bir koordinat girdiniz ! Lütfen tekrar giriniz.");
+            } else {
+                this.countMines(selectedRow, selectedCol);
+                break;
+            }
+        }
+    }
+
+    public void countMines(int row, int col) {
+        int count = 0;
+        for (int i = row - 1; i <= row + 1; i++) {
+            for (int j = col - 1; j <= col + 1; j++) {
+                count = map[i][j].equals("*") ? count + 1 : count;
+            }
+        }
+        this.board[row][col] = Integer.toString(count);
     }
 
 
