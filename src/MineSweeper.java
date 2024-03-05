@@ -87,7 +87,7 @@ public class MineSweeper { // (Değerlendirme formu 5.)
                 System.out.println("Daha önce seçilmiş bir koordinat girdiniz ! Lütfen tekrar giriniz.");
             } else {
                 this.countMines(selectedRow, selectedCol);
-                if (++winCount == (this.size - this.mines)) // (Değerlendirme formu 14.) Oyunu kazanma durumu
+                if (++this.winCount == (this.size - this.mines)) // (Değerlendirme formu 14.) Oyunu kazanma durumu
                     this.isWin = true;
                 break;
             }
