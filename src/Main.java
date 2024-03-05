@@ -6,7 +6,7 @@ public class Main {
 
         Scanner scan = new Scanner(System.in);
 
-        // Matris boyutunu belirlemek için kullanıcıdan veri alındı. ( Değerlendirme formu 7 )
+        // Matris boyutunu belirlemek için kullanıcıdan veri alındı. (Değerlendirme formu 7.)
         System.out.println("Mayın Tarlası Oyununa Hoşgeldiniz.\nOyun Tahtanızın Boyutunu Ayarlayalım");
         do {
             if (row < 2 || col < 2) {
