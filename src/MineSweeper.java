@@ -71,7 +71,7 @@ public class MineSweeper { // (Değerlendirme formu 5.)
     // Kullanıcıdan işaretlemek istediği koordinatları alan ve uygunluğunu kontrol eden select metodu. (Değerlendirme formu 9, 10)
     public void select() {
         for (; ; ) {
-            System.out.println("Tahtada açmak istediğiniz koordinatları satır ve sütun olarak giriniz.");    // (Değerlendirme formu 9.)
+            System.out.println("Tahtada açmak istediğiniz koordinatları satır ve sütun olarak giriniz.");   // (Değerlendirme formu 9.)
             System.out.print("Satır :");
             int selectedRow = this.scan.nextInt();
             System.out.print("Sütun :");
