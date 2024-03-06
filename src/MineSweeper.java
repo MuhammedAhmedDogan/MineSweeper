@@ -141,4 +141,5 @@ public class MineSweeper { // (Değerlendirme formu 5.)
         this.board[row][col] = Integer.toString(count);
         this.map[row][col] = Integer.toString(count);
     }
+
 }
