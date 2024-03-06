@@ -29,6 +29,7 @@ public class MineSweeper { // (Değerlendirme formu 5.)
             this.print(this.board);
             this.select();
         }
+
         // (Değerlendirme formu 15.)
         System.out.println("Mayınların konumu");
         this.print(this.map);
@@ -39,16 +40,22 @@ public class MineSweeper { // (Değerlendirme formu 5.)
     // Matris boyutunu belirlemek için kullanıcıdan veri alındı. (Değerlendirme formu 7.)
     public void gameSize (){
         System.out.println("Mayın Tarlası Oyununa Hoşgeldiniz.\nOyun Tahtanızın Boyutunu Ayarlayalım");
+
         do {
             if (this.row < 2 || this.col < 2) {
                 System.out.println("Satır veya sütün sayısı 2'den küçük olamaz! Lütfen tekrar giriniz :");
             }
+
             System.out.print("Satır sayısı : ");
             this.row = this.scan.nextInt();
+
             System.out.print("Sütun sayısı : ");
             this.col = this.scan.nextInt();
+
             System.out.println("========================================");
+
         } while (this.row < 2 || this.col < 2);
+
         this.size = row * col;
         this.mines = (int) Math.round(this.size / 4.0); // Tahta büyüklüğüne göre mayın sayısı hesaplandı.
         this.board = new String[row][col];
@@ -65,9 +72,11 @@ public class MineSweeper { // (Değerlendirme formu 5.)
     // Tahtanın 1/4'ü sayıda mayın üretip rastgele yerleştiren mineCreator metodu. (Değerlendirme formu 8.)
     public void mineCreator(String[][] arr) {
         int randRow, randCol, count = 0;
+
         while (count < this.mines) {
             randRow = this.random.nextInt(row);
             randCol = this.random.nextInt(col);
+
             if (!arr[randRow][randCol].equals("*")) {
                 arr[randRow][randCol] = "*";
                 count++;
@@ -91,6 +100,7 @@ public class MineSweeper { // (Değerlendirme formu 5.)
             System.out.println("Tahtada açmak istediğiniz koordinatları satır ve sütun olarak giriniz.");   // (Değerlendirme formu 9.)
             System.out.print("Satır :");
             int selectedRow = this.scan.nextInt();
+
             System.out.print("Sütun :");
             int selectedCol = this.scan.nextInt();
             System.out.println("========================================");
@@ -104,8 +114,10 @@ public class MineSweeper { // (Değerlendirme formu 5.)
                 System.out.println("Daha önce seçilmiş bir koordinat girdiniz ! Lütfen tekrar giriniz.");
             } else {
                 this.countMines(selectedRow, selectedCol);
+
                 if (++this.winCount == (this.size - this.mines)) // (Değerlendirme formu 14.) Oyunu kazanma durumu
                     this.isWin = true;
+
                 break;
             }
         }
