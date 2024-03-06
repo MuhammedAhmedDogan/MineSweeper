@@ -7,21 +7,19 @@ public class MineSweeper { // (Değerlendirme formu 5.)
     int row, col, size, mines, winCount;   // Oyun tahtasının boyutları, mayın sayısı ve kazanma durumunu hesaplamak bir sayaç tanımlandı.
     boolean isWin = false, isLose = false; // Oyunun kazanıldığını ya da kaybedildiğini belirleyen boolean değişkenler tanımlandı.
     String[][] board, map;                 // Kullanıcıya gösterilen oyun tahtası ve hesaplamalar için kullanılıp oyun sonunda gösterilen mayın konumları haritası tanımlandı.
+
     Random random = new Random();          // Mayın konumlarını rastgele belirlemek için Random sınıfından bir random nesnesi oluşturuldu.
     Scanner scan = new Scanner(System.in); // Kullanıcıdan veri almak için Scanner sınıfından scan nesnesi oluşturuldu.
 
-    // MineSweeper sınıfının constructor metodu. Kullanıcıdan alınan satır ve sütun değerleri ile oyun tahtasının niteliklerini oluşturur.
+    // MineSweeper sınıfının constructor metodu.
     MineSweeper(int row, int col) {
         this.row = row;
         this.col = col;
-        this.size = row * col;
-        this.mines = (int) Math.round(this.size / 4.0); // Tahta büyüklüğüne göre mayın sayısı hesaplandı.
-        this.board = new String[row][col];
-        this.map = new String[row][col];
     }
 
     // Oyunu çalıştıran run metodu. (Değerlendirme formu 6.)
     public void run() {
+        this.gameSize();
         this.boardCreator(this.board);
         this.boardCreator(this.map);
         this.mineCreator(this.map);
@@ -36,6 +34,25 @@ public class MineSweeper { // (Değerlendirme formu 5.)
         this.print(this.map);
         String conclusion = this.isWin ? "Tebrikler oyunu kazandınız." : "Oyun bitti. Mayına bastınız !";
         System.out.println(conclusion);
+    }
+
+    // Matris boyutunu belirlemek için kullanıcıdan veri alındı. (Değerlendirme formu 7.)
+    public void gameSize (){
+        System.out.println("Mayın Tarlası Oyununa Hoşgeldiniz.\nOyun Tahtanızın Boyutunu Ayarlayalım");
+        do {
+            if (this.row < 2 || this.col < 2) {
+                System.out.println("Satır veya sütün sayısı 2'den küçük olamaz! Lütfen tekrar giriniz :");
+            }
+            System.out.print("Satır sayısı : ");
+            this.row = this.scan.nextInt();
+            System.out.print("Sütun sayısı : ");
+            this.col = this.scan.nextInt();
+            System.out.println("========================================");
+        } while (this.row < 2 || this.col < 2);
+        this.size = row * col;
+        this.mines = (int) Math.round(this.size / 4.0); // Tahta büyüklüğüne göre mayın sayısı hesaplandı.
+        this.board = new String[row][col];
+        this.map = new String[row][col];
     }
 
     // Boş oyun tahtasını oluşturan boardCreator metodu.
