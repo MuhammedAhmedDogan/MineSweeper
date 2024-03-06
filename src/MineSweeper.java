@@ -53,13 +53,12 @@ public class MineSweeper { // (Değerlendirme formu 5.)
             this.col = this.scan.nextInt();
 
             System.out.println("========================================");
-
         } while (this.row < 2 || this.col < 2);
 
-        this.size = row * col;
+        this.size = this.row * this.col;
         this.mines = (int) Math.round(this.size / 4.0); // Tahta büyüklüğüne göre mayın sayısı hesaplandı.
-        this.board = new String[row][col];
-        this.map = new String[row][col];
+        this.board = new String[this.row][this.col];
+        this.map = new String[this.row][this.col];
     }
 
     // Boş oyun tahtasını oluşturan boardCreator metodu.
@@ -74,8 +73,8 @@ public class MineSweeper { // (Değerlendirme formu 5.)
         int randRow, randCol, count = 0;
 
         while (count < this.mines) {
-            randRow = this.random.nextInt(row);
-            randCol = this.random.nextInt(col);
+            randRow = this.random.nextInt(this.row);
+            randCol = this.random.nextInt(this.col);
 
             if (!arr[randRow][randCol].equals("*")) {
                 arr[randRow][randCol] = "*";
@@ -127,14 +126,17 @@ public class MineSweeper { // (Değerlendirme formu 5.)
     // select metodu içerisinde seçilen noktada mayın olmaması durumunda çağırıldı.
     public void countMines(int row, int col) {
         int count = 0;
+
         for (int i = row - 1; i <= row + 1; i++) {
             i = Math.max(i, 0);
             if (i == this.row)
                 break;
+
             for (int j = col - 1; j <= col + 1; j++) {
                 j = Math.max(j, 0);
                 if (j == this.col)
                     break;
+
                 count = map[i][j].equals("*") ? count + 1 : count;
             }
         }
