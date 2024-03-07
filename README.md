@@ -8,25 +8,3 @@ Oluşturulan oyun tahtasının 1/4'ü rastgele konumlandırılmış mayınlarla 
 Girilen koordinat konumunda mayın bulunuyorsa oyun kaybedilir. Mayın bulunmuyorsa girilen koordinata, çevresinde kaç adet mayın olduğu değeri yazılır ve oyun tahtası tekrar ekrana bastırılır.
 Mayınsız tüm noktalar açılırsa oyun kazanılır. ( Koordinatlar 0 ile başlamaktadır. Gireceğiniz satır ve sütun değerini 0'dan başlayarak sayınız.)
 
-örnek :
-Mayınların Konumu
-* - - 
-- - * 
-- - - 
-===========================
-Mayın Tarlası Oyununa Hoşgeldiniz !
-- - - 
-- - - 
-- - - 
-Satır Giriniz : 0
-Sütun Giriniz : 1
-===========================
-- 2 - 
-- - - 
-- - - 
-Satır Giriniz : 2
-Sütun Giriniz : 0
-===========================
-- 2 - 
-- - - 
-0 - - 
