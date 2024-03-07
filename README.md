@@ -1,6 +1,6 @@
-Mayın Tarlası Oyunu
+# Mayın Tarlası Oyunu
 
-Proje Java version 21.0.2 kullanılarak hazırlanmıştır
+Proje Java version 21.0.2 kullanılarak hazırlanmıştır.
 
 Oyun terminal üzerinde çalışan metin tabanlı bir oyundur. Başlatıldığında kullanıcıdan oyun tahtasının boyutlarını belirlemek için iki adet integer veri istenir.
 Girilen satır ve sütun değerleri kullanılarak oyun tahtası oluşturulur ve istenen satır, sütun adetlerine sahip oyun tahtası ekrana bastırılır.
@@ -14,7 +14,7 @@ Mayınların Konumu
 - - * 
 - - - 
 ===========================
-Mayın Tarlası Oyuna Hoşgeldiniz !
+Mayın Tarlası Oyununa Hoşgeldiniz !
 - - - 
 - - - 
 - - - 
