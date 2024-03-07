@@ -13,4 +13,5 @@ adet mayın olduğu değeri yazılır ve oyun tahtası tekrar ekrana bastırıl�
 Mayınsız tüm noktalar açılırsa oyun kazanılır. ( Koordinatlar 0 ile başlamaktadır. Gireceğiniz satır ve sütun değerini
 0'dan başlayarak sayınız.)
 
-![Örnek :](https://github.com/MuhammedAhmedDogan/MineSweeper/blob/master/MinesweeperImage.png)
+**Örnek :**
+![Örnek Görsel:](https://github.com/MuhammedAhmedDogan/MineSweeper/blob/master/MinesweeperImage.png)
