@@ -14,4 +14,5 @@ Mayınsız tüm noktalar açılırsa oyun kazanılır. ( Koordinatlar 0 ile baş
 0'dan başlayarak sayınız.)
 
 **Örnek :**
+
 ![Örnek Görsel:](https://github.com/MuhammedAhmedDogan/MineSweeper/blob/master/MinesweeperImage.png)
