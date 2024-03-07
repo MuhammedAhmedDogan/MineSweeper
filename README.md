@@ -7,4 +7,3 @@ Girilen satır ve sütun değerleri kullanılarak oyun tahtası oluşturulur ve 
 Oluşturulan oyun tahtasının 1/4'ü rastgele konumlandırılmış mayınlarla doludur ancak kullanıcı bu mayınları göremeyecektir. Bu etapta kullanıcıdan bir koordinat (satır ve sütun) istenir.
 Girilen koordinat konumunda mayın bulunuyorsa oyun kaybedilir. Mayın bulunmuyorsa girilen koordinata, çevresinde kaç adet mayın olduğu değeri yazılır ve oyun tahtası tekrar ekrana bastırılır.
 Mayınsız tüm noktalar açılırsa oyun kazanılır. ( Koordinatlar 0 ile başlamaktadır. Gireceğiniz satır ve sütun değerini 0'dan başlayarak sayınız.)
-
