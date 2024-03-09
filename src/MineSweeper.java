@@ -12,7 +12,7 @@ public class MineSweeper { // (Değerlendirme formu 5.)
     Scanner scan = new Scanner(System.in); // Kullanıcıdan veri almak için Scanner sınıfından scan nesnesi oluşturuldu.
 
     // MineSweeper sınıfının constructor metodu.
-    MineSweeper(int row, int col) {
+    public MineSweeper(int row, int col) {
         this.row = row;
         this.col = col;
     }
