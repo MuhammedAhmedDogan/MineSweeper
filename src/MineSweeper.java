@@ -4,9 +4,9 @@ import java.util.Scanner;
 
 public class MineSweeper { // (Değerlendirme formu 5.)
     // Değişkenler. MineSweeper sınıfının nitelikleri
-    int row, col, size, mines, winCount;   // Oyun tahtasının boyutları, mayın sayısı ve kazanma durumunu hesaplamak bir sayaç tanımlandı.
-    boolean isWin = false, isLose = false; // Oyunun kazanıldığını ya da kaybedildiğini belirleyen boolean değişkenler tanımlandı.
-    String[][] board, map;                 // Kullanıcıya gösterilen oyun tahtası ve hesaplamalar için kullanılıp oyun sonunda gösterilen mayın konumları haritası tanımlandı.
+    private int row, col, size, mines, winCount;   // Oyun tahtasının boyutları, mayın sayısı ve kazanma durumunu hesaplamak bir sayaç tanımlandı.
+    private boolean isWin = false, isLose = false; // Oyunun kazanıldığını ya da kaybedildiğini belirleyen boolean değişkenler tanımlandı.
+    private String[][] board, map;                 // Kullanıcıya gösterilen oyun tahtası ve hesaplamalar için kullanılıp oyun sonunda gösterilen mayın konumları haritası tanımlandı.
 
     Random random = new Random();          // Mayın konumlarını rastgele belirlemek için Random sınıfından bir random nesnesi oluşturuldu.
     Scanner scan = new Scanner(System.in); // Kullanıcıdan veri almak için Scanner sınıfından scan nesnesi oluşturuldu.
@@ -42,7 +42,7 @@ public class MineSweeper { // (Değerlendirme formu 5.)
     }
 
     // Matris boyutunu belirlemek için kullanıcıdan veri alındı. (Değerlendirme formu 7.)
-    public void gameSize (){
+    private void gameSize (){
         System.out.println("Mayın Tarlası Oyununa Hoşgeldiniz.\nOyun Tahtanızın Boyutunu Ayarlayalım");
 
         do {
@@ -66,14 +66,14 @@ public class MineSweeper { // (Değerlendirme formu 5.)
     }
 
     // Boş oyun tahtasını oluşturan boardCreator metodu.
-    public void boardCreator(String[][] arr) {
+    private void boardCreator(String[][] arr) {
         for (String[] strings : arr) {
             Arrays.fill(strings, "-");
         }
     }
 
     // Tahtanın 1/4'ü sayıda mayın üretip rastgele yerleştiren mineCreator metodu. (Değerlendirme formu 8.)
-    public void mineCreator(String[][] arr) {
+    private void mineCreator(String[][] arr) {
         int randRow, randCol, count = 0;
 
         while (count < this.mines) {
@@ -88,7 +88,7 @@ public class MineSweeper { // (Değerlendirme formu 5.)
     }
 
     // Oyun tahtasını ekrana bastıran print metodu.
-    public void print(String[][] arr) {
+    private void print(String[][] arr) {
         for (String[] row : arr) {
             for (String col : row) {
                 System.out.print(col + "  ");
@@ -98,7 +98,7 @@ public class MineSweeper { // (Değerlendirme formu 5.)
     }
 
     // Kullanıcıdan işaretlemek istediği koordinatları alan ve uygunluğunu kontrol eden select metodu. (Değerlendirme formu 9, 10, 13, 14)
-    public void select() {
+    private void select() {
         for (; ; ) {
             System.out.println("Tahtada açmak istediğiniz koordinatları satır ve sütun olarak giriniz.");   // (Değerlendirme formu 9.)
             System.out.print("Satır :");
@@ -128,7 +128,7 @@ public class MineSweeper { // (Değerlendirme formu 5.)
 
     // Girilen noktanın çevresindeki mayınları sayan countMines metodu. (Değerlendirme formu 12.)
     // select metodu içerisinde seçilen noktada mayın olmaması durumunda çağırıldı.
-    public void countMines(int row, int col) {
+    private void countMines(int row, int col) {
         int count = 0;
 
         for (int i = row - 1; i <= row + 1; i++) {
