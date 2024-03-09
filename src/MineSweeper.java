@@ -24,6 +24,10 @@ public class MineSweeper { // (Değerlendirme formu 5.)
         this.boardCreator(this.map);
         this.mineCreator(this.map);
 
+        System.out.println("Mentor kontrolü için mayınların konumu");
+        this.print(map);                                                // Mentor kontrolü için oyun başlangıcına mayın konumları eklendi.
+        System.out.println("========================================");
+
         // (Değerlendirme formu 11.)
         while (!this.isWin && !this.isLose) {
             this.print(this.board);
